@@ -1,9 +1,19 @@
 #!/usr/bin/env groovy
 @Library('abapci-library') _
 
-  stage('Data declaration') {
+  stage('data declaration') {
      def fileLandscapeConfig = 'config/landscape.yaml'
      landscapeConfig = readYaml file: fileLandscapeConfig
      echo "Landscape config:  ${landscapeConfig}"
      dev.pipelinename = "${env.JOB_BASE_NAME}_${env.BUILD_NUMBER}"
   }    
+
+	stage('integration') {
+		steps {
+			script {
+				integrate.commit_id = sh(returnStdout: true, script: 'git rev-parse HEAD')
+				echo 'integrate.commit_id is :'+integrate.commit_id 
+				integrate.transport = pullByCommitgCTSHTTP(integrate)                  
+			}
+		}
+	}
