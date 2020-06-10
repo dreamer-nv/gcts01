@@ -34,7 +34,7 @@ def integrate = [
 	"atcresultKey": "ATC_FOR_TCK"
 ]
 
-def call(Map args) {
+def echoParameters(Map args) {
 	/*args.each{
 	  echo "${args.key} = ${args.value}"
 	}*/
