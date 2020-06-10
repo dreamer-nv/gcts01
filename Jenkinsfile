@@ -35,28 +35,26 @@ def integrate = [
 ]
 
 pipeline {
-    agent any
-    
-    stages {
-	
-	stage('data declaration') {
-		steps {
-			script {
-
-				dev.pipelinename = "${env.JOB_BASE_NAME}_${env.BUILD_NUMBER}"
-				integrate.pipelinename = "${env.JOB_BASE_NAME}_${env.BUILD_NUMBER}"
-				echoParameters(dev) 
-				echoParameters(integrate)
-			}
-		}
-	}
-	stage('integrate') {
-		steps {
-			script {
-				integrate.commit_id = sh(returnStdout: true, script: 'git rev-parse HEAD')
-				echo 'integrate.commit_id is :'+integrate.commit_id 
-				integrate.transport = pullByCommitgCTSHTTP(integrate)                  
-			}
-		}
-	}    
-}
+  agent any
+  stages {
+    stage('data declaration') {
+      steps {
+        script {
+          dev.pipelinename = "${env.JOB_BASE_NAME}_${env.BUILD_NUMBER}"
+          integrate.pipelinename = "${env.JOB_BASE_NAME}_${env.BUILD_NUMBER}"
+          echoParameters(dev) 
+          echoParameters(integrate)
+          }
+        }
+      }
+    stage('integrate') {
+      steps {
+        script {
+          integrate.commit_id = sh(returnStdout: true, script: 'git rev-parse HEAD')
+          echo 'integrate.commit_id is :'+integrate.commit_id 
+          integrate.transport = pullByCommitgCTSHTTP(integrate)                  
+          }
+        }
+      }    
+    }
+  }
