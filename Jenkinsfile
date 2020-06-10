@@ -18,7 +18,7 @@ def dev = [
 ]
 
 def integrate = [ 
-	"hostname": "18.212.25.230",
+	"hostname": "3.86.23.38",
 	"port": "50001",
 	"external_alias": "build",
 	"transport": "",
