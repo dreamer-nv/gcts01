@@ -1,2 +1,2 @@
-# gstc01
+# gcts01
 test for gCTS
