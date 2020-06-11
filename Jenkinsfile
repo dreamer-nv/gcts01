@@ -1,5 +1,5 @@
-@Library('ares-lib') _
 #!/usr/bin/env groovy
+@Library('ares-lib') _
 
 def dev = [ 
 	"hostname": "3.232.239.122",
