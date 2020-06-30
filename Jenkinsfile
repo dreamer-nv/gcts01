@@ -47,17 +47,49 @@ pipeline {
           integrate.pipelinename = "${env.JOB_BASE_NAME}_${env.BUILD_NUMBER}"
           echoParameters(dev) 
           echoParameters(integrate)
-          }
-        }
-      }
+          } //script
+        } // steps
+      } // stage
     stage('integrate') {
       steps {
         script {
           integrate.commit_id = sh(returnStdout: true, script: 'git rev-parse HEAD')
           echo 'integrate.commit_id is :'+integrate.commit_id 
           integrate.transport = pullByCommitgCTSHTTP(integrate)                  
-          }
-        }
-      }    
-    }
-  }
+          } //script
+        } // steps
+      } // stage
+    stage('ATC checks') {
+      parallel {    
+        stage('AUNIT') {
+	  steps {
+	    script {
+	      integrate.build_phase = "AUNIT"
+	      callingBuildFrameworkHTTP(integrate)
+	      getUnitTestResults(integrate)
+	      } //script
+	    } //steps
+	  } //stage
+	stage('ATC') {
+	  steps {
+	    script {
+	      integrate.build_phase = "ATC"
+	      callingBuildFrameworkHTTP(integrate)
+	      getATCResults(integrate)
+	      } //script
+	    } //steps
+	  } //stage
+	} //parallel
+      } //stage
+    } //stages
+  post {
+    failure {
+      script {
+	echo "Build Failed"
+	} //script
+      mail to: getGITAuthorEmail(),
+      subject: "Error in CI pipeline",
+      body: "Something is wrong with build: ${env.RUN_DISPLAY_URL}"
+      } //failure
+    } //post
+  } //pipeline
