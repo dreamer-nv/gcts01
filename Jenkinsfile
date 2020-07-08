@@ -87,9 +87,9 @@ pipeline {
       script {
 	echo "Build Failed"
 	} //script
-      mail to: "andrey.sharapov@sap.com",
-      subject: "Error in CI pipeline",
-      body: "Something is wrong with build: ${env.RUN_DISPLAY_URL}"
+//      mail to: "andrey.sharapov@sap.com",
+//      subject: "Error in CI pipeline",
+//      body: "Something is wrong with build: ${env.RUN_DISPLAY_URL}"
       } //failure
     } //post
   } //pipeline
