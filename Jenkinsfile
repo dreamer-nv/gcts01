@@ -14,8 +14,8 @@ def dev = [
 	"pipelinename": "",
   	"repo_id": "i079666gcts1",
   	"commit_id": "",
-	"aunitresultKey": "AUNIT_FOR_TCK",
-	"atcresultKey": "ATC_FOR_TCK"
+	"aunitresultKey": "AUNIT_1",
+	"atcresultKey": "ATC_1"
 ]
 
 def integrate = [ 
@@ -31,8 +31,8 @@ def integrate = [
 	"pipelinename": "",
   	"repo_id": "i079666gcts1",
   	"commit_id": "",
-	"aunitresultKey": "AUNIT_FOR_TCK",
-	"atcresultKey": "ATC_FOR_TCK"
+	"aunitresultKey": "AUNIT_1",
+	"atcresultKey": "ATC_1"
 ]
 
 
