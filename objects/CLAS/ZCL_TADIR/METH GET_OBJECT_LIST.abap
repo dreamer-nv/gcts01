@@ -1,6 +1,6 @@
 METHOD get_object_list.
 
-" change 1530
+" change 1540
 
 " start AUnit tests - Ctrl+Shift+F10
 
@@ -18,7 +18,7 @@ DATA: lv_isocd type ISOCD.
 SELECT SINGLE land1 FROM t001 INTO @DATA(lv_land) WHERE bukrs EQ '1000'.
 SELECT SINGLE land1 FROM t001 INTO lv_land WHERE spras EQ 'EN'.
 
-" uncomment these rows to activate ATC error
+"!!! uncomment these rows to activate ATC error
 
 *SELECT * FROM t001 INTO TABLE @DATA(lt_t001). "PERFORMANCE_CHECKLIST_HDB - with error
 *select bukrs, waers from t001 into table @data(lt_t001). "PERFORMANCE_CHECKLIST_HDB - without error
