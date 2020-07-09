@@ -56,11 +56,11 @@ CLASS lc_tadir_view_unit_test IMPLEMENTATION.
     "CDS
     mr_test_environment = cl_cds_test_environment=>create( i_for_entity = 'Z_TADIR_CDS' ).
 
+try.
     cl_salv_table=>factory( IMPORTING r_salv_table = go_alv
                            CHANGING t_table = gt_alv ).
-    case sy-subrc.
-      when others.
-        endcase.
+    CATCH cx_salv_msg.
+      endtry.
 
     DATA lt_table TYPE STANDARD TABLE OF tadir.
     lt_table = VALUE #(
