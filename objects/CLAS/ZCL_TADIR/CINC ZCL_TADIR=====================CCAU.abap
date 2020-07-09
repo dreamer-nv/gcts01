@@ -90,7 +90,7 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
   ENDMETHOD.
     METHOD _03_get_object_list.
 
-    mo_cut->get_object_list( EXPORTING iv_devclass = 'ZZZ' IMPORTING et_table = data(lt_table) ).
+    mo_cut->get_object_list( EXPORTING iv_devclass = 'PBAS' IMPORTING et_table = data(lt_table) ).
 
     cl_abap_unit_assert=>assert_table_contains(
       EXPORTING
