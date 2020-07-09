@@ -81,7 +81,7 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
     cl_abap_unit_assert=>assert_number_between(
       EXPORTING
         lower            = 0
-        "active AUnit error
+        "AUnit error
         "upper            = 3
         "AUnit OK
         upper            = 4
@@ -94,10 +94,10 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
 
     cl_abap_unit_assert=>assert_table_contains(
       EXPORTING
-        "active AUnit error
-        line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'CLAS' obj_name = 'ZCL_TADIR' devclass = 'ZUNIT_TEST' )
+        "AUnit error
+        "line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z4' devclass = 'YYY' )
         "AUnit OK
-        "line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'DOMA' obj_name = 'ZABAR' devclass = 'PBAS' )
+        line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'CLAS' obj_name = 'ZCL_TADIR' devclass = 'ZUNIT_TEST' )
         table            = lt_table
         msg              = 'Not my line' ).
 
