@@ -58,7 +58,9 @@ CLASS lc_tadir_view_unit_test IMPLEMENTATION.
 
     cl_salv_table=>factory( IMPORTING r_salv_table = go_alv
                            CHANGING t_table = gt_alv ).
-
+    case sy-subrc.
+      when others.
+        endcase.
 
     DATA lt_table TYPE STANDARD TABLE OF tadir.
     lt_table = VALUE #(
