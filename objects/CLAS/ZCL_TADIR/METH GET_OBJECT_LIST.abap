@@ -1,10 +1,10 @@
 METHOD get_object_list.
 
-" change 1423
+" change 1426
 
 " method body to check AUnit test
 SELECT * FROM Z_TADIR_CDS
-UP TO 10 ROWS
+"UP TO 10 ROWS
 into TABLE @et_table
 WHERE devclass = @iv_devclass.
 
