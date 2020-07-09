@@ -90,14 +90,14 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
   ENDMETHOD.
     METHOD _03_get_object_list.
 
-    mo_cut->get_object_list( EXPORTING iv_devclass = 'PBAS' IMPORTING et_table = data(lt_table) ).
+    mo_cut->get_object_list( EXPORTING iv_devclass = 'ZUNIT_TEST' IMPORTING et_table = data(lt_table) ).
 
     cl_abap_unit_assert=>assert_table_contains(
       EXPORTING
         "active AUnit error
-        "line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z4' devclass = 'YYY' )
+        line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'CLAS' obj_name = 'ZCL_TADIR' devclass = 'ZUNIT_TEST' )
         "AUnit OK
-        line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'DOMA' obj_name = 'ZABAR' devclass = 'PBAS' )
+        "line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'DOMA' obj_name = 'ZABAR' devclass = 'PBAS' )
         table            = lt_table
         msg              = 'Not my line' ).
 

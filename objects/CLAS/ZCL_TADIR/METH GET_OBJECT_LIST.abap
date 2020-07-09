@@ -1,6 +1,6 @@
 METHOD get_object_list.
 
-" change 1413
+" change 1423
 
 " method body to check AUnit test
 SELECT * FROM Z_TADIR_CDS
