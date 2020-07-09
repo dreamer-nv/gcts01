@@ -2,6 +2,8 @@ METHOD get_object_list.
 
 " change 1500
 
+" start AUnit tests - Ctrl+Shift+F10
+
 " method body to check AUnit test
 SELECT * FROM Z_TADIR_CDS
 UP TO 10 ROWS
