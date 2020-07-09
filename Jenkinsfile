@@ -31,8 +31,8 @@ def integrate = [
 	"pipelinename": "",
   	"repo_id": "i079666gcts1",
   	"commit_id": "",
-	"aunitresultKey": "AUNIT_1",
-	"atcresultKey": "ATC_1"
+	"aunitresultKey": "GCTS01_ATC_AUNIT",
+	"atcresultKey": "GCTS01_ATC"
 ]
 
 
