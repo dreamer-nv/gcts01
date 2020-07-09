@@ -59,8 +59,8 @@ pipeline {
           } //script
         } // steps
       } // stage
-//    stage('ATC checks') {
-//      parallel {    
+    stage('ATC checks') {
+      parallel {    
         stage('AUNIT') {
 	  steps {
 	    script {
@@ -79,8 +79,8 @@ pipeline {
 	      } //script
 	    } //steps
 	  } //stage
-//        } //parallel
-//      } //stage
+        } //parallel
+      } //stage
     } //stages
   post {
     failure {
