@@ -1,6 +1,6 @@
 METHOD get_object_list.
 
-" change 1217
+" change 1222
 
 SELECT * FROM Z_TADIR_CDS
 UP TO 10 ROWS
