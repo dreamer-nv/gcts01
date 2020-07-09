@@ -31,6 +31,7 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
       ( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z2' devclass = 'ZZZ' )
       ( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z3' devclass = 'ZZZ' )
       ( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z4' devclass = 'YYY' )
+      " comment this row to activate AUnit error
       ( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z5' devclass = 'ZZZ' )
       ).
 
@@ -80,10 +81,7 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
 
     cl_abap_unit_assert=>assert_number_between(
       EXPORTING
-        lower            = 0
-        "AUnit error
-        "upper            = 3
-        "AUnit OK
+        lower            = 4
         upper            = 4
         number           = lines( lt_table ) ).
 
@@ -91,13 +89,9 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
     METHOD _03_get_object_list.
 
     mo_cut->get_object_list( EXPORTING iv_devclass = 'ZZZ' IMPORTING et_table = data(lt_table) ).
-    " mo_cut->get_object_list( EXPORTING iv_devclass = 'ZZZ' IMPORTING et_table = data(lt_table) ).
 
     cl_abap_unit_assert=>assert_table_contains(
       EXPORTING
-        "AUnit error
-        "line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z5' devclass = 'YYY' )
-        "AUnit OK
         line             = VALUE z_tadir_view( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z5' devclass = 'ZZZ' )
         table            = lt_table
         msg              = 'Not my line' ).
