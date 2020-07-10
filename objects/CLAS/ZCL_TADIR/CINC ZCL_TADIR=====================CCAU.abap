@@ -32,7 +32,7 @@ CLASS lc_tadir_unit_test IMPLEMENTATION.
       ( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z3' devclass = 'ZZZ' )
       ( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z4' devclass = 'YYY' )
       "!!! comment this row to activate AUnit error
-      "( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z5' devclass = 'ZZZ' )
+      ( pgmid = 'R3TR' object = 'DOMA' obj_name = 'Z5' devclass = 'ZZZ' )
       ).
 
     "DDIC

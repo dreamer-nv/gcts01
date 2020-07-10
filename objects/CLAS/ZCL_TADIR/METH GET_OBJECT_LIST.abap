@@ -1,6 +1,6 @@
 METHOD get_object_list.
 
-" change 1339
+" change 1343
 
 " start AUnit tests - Ctrl+Shift+F10
 
@@ -20,8 +20,8 @@ SELECT SINGLE land1 FROM t001 INTO lv_land WHERE spras EQ 'EN'.
 
 "!!! uncomment these rows to activate ATC error
 
-SELECT * FROM t001 INTO TABLE @DATA(lt_t001). "PERFORMANCE_CHECKLIST_HDB - with error
-"select bukrs, waers from t001 into table @data(lt_t001). "PERFORMANCE_CHECKLIST_HDB - without error
+"SELECT * FROM t001 INTO TABLE @DATA(lt_t001). "PERFORMANCE_CHECKLIST_HDB - with error
+select bukrs, waers from t001 into table @data(lt_t001). "PERFORMANCE_CHECKLIST_HDB - without error
 
 *{ PERFORMANCE_CHECKLIST_HDB - with error
 *LOOP AT lt_t001 INTO DATA(ls_t001).
