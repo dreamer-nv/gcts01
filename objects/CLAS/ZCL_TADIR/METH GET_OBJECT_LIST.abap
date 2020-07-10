@@ -1,6 +1,6 @@
 METHOD get_object_list.
 
-" change 1405
+" change 1608
 
 " start AUnit tests - Ctrl+Shift+F10
 
