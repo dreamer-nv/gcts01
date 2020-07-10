@@ -59,28 +59,32 @@ pipeline {
           } //script
         } // steps
       } // stage
-//    stage('ATC checks') {
-//      parallel {    
+    stage('ATC checks') {
+      parallel {    
         stage('AUNIT') {
 	  steps {
 	    script {
-	      integrate.build_phase = "AUNIT"
-	      callingBuildFrameworkHTTP(integrate)
-	      getUnitTestResults(integrate)
+					def aunit_dc = integrate.clone()
+					assert aunit_dc == integrate
+					aunit_dc.build_phase = "AUNIT"
+					callingBuildFrameworkHTTP(aunit_dc)
+					getUnitTestResults(aunit_dc)		    
 	      } //script
 	    } //steps
 	  } //stage
 	stage('ATC') {
 	  steps {
 	    script {
-	      integrate.build_phase = "ATC"
-	      callingBuildFrameworkHTTP(integrate)
-	      getATCResults(integrate)
+					def atc_dc = integrate.clone()
+					assert atc_dc == integrate
+					atc_dc.build_phase = "ATC"
+					callingBuildFrameworkHTTP(atc_dc)
+					getATCResults(atc_dc)
 	      } //script
 	    } //steps
 	  } //stage
-//        } //parallel
-//      } //stage
+        } //parallel
+      } //stage
     } //stages
   post {
     failure {
