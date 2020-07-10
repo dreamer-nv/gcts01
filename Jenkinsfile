@@ -60,8 +60,8 @@ pipeline {
         } // steps
       } // stage
     stage('ATC checks') {
-      parallel {    
-        stage('AUNIT') {
+      //parallel {    
+        //stage('AUNIT') {
 	  steps {
 	    script {
 					def aunit_dc = integrate.clone()
@@ -83,8 +83,8 @@ pipeline {
 	      } //script
 	    } //steps
 	  } //stage
-        } //parallel
-      } //stage
+        //} //parallel
+      //} //stage
     } //stages
   post {
     failure {
