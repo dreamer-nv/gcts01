@@ -3,6 +3,7 @@ METHOD get_object_list.
 " change 1614
 
 " start AUnit tests - Ctrl+Shift+F10
+" user to call target services - i079666
 
 " method body to check AUnit test
 SELECT * FROM Z_TADIR_CDS
