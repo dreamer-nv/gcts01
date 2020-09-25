@@ -2,7 +2,7 @@
 @Library('ares-lib') _
 
 def dev = [ 
-	"hostname": "3.232.239.122",
+	"hostname": "3.84.254.149",
 	"port": "50001",
 	"external_alias": "build",
 	"transport": "",
@@ -19,7 +19,7 @@ def dev = [
 ]
 
 def integrate = [ 
-	"hostname": "34.228.253.201",
+	"hostname": "54.92.149.252",
 	"port": "50000",
 	"external_alias": "build",
 	"transport": "",
