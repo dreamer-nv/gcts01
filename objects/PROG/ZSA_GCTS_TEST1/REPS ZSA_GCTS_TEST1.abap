@@ -4,7 +4,7 @@
 *&
 *&---------------------------------------------------------------------*
 REPORT ZSA_GCTS_TEST1.
-" change 1246
+" change 1648
 
 " code for ATC check
 TABLES: tcurc.
