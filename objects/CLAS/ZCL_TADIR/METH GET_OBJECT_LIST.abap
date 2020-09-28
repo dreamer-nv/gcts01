@@ -1,6 +1,6 @@
 METHOD get_object_list.
 
-" change 1340
+" change 1627
 
 " start AUnit tests - Ctrl+Shift+F10
 " user to call target services - i079666
